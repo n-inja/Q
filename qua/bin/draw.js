@@ -16,15 +16,13 @@ class DrawManager {
 		this.ctx.imageSmoothingEnabled = false;
         this.img = img;
         this.ctx.font = "32px '美咲ゴシック'";
-		this.layer = new Array(10);
-		for(let i = 0; i < 10; i++) {
+		this.layer = new Array(15);
+		for(let i = 0; i < 15; i++) {
 			this.layer[i] = new Array();
 		}
-		console.log(this.layer);
     }
 	pushElem(elem, depth) {
-		console.log(elem, depth, this.layer[depth]);
-		if(depth >= 0 && depth < 10) {
+		if(depth >= 0 && depth < 15) {
 			this.layer[depth].push(elem);
 		}
 	}
@@ -35,7 +33,7 @@ class DrawManager {
 				this.drawCip(drawElem.key, CIPSIZE, drawElem.cx, drawElem.cy, drawElem.x, drawElem.y);
 			});
 		});
-		for(let i = 0; i < 10; i++) {
+		for(let i = 0; i < 15; i++) {
 			this.layer[i] = new Array();
 		}
 	}
